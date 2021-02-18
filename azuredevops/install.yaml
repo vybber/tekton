@@ -1,0 +1,8 @@
+name: Install Tekton # build numbering format
+
+trigger: none
+
+steps:
+- script: |
+  chmod +x install.sh
+  ./install.sh

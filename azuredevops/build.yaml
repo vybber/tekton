@@ -1,0 +1,11 @@
+name: Build  # build numbering format
+
+
+trigger: 
+  branches:
+    include: *
+
+steps:
+- script: |
+  chmod +x build-k8s.sh
+  ./build-k8s.sh

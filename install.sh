@@ -3,6 +3,10 @@ if [ "$#" -ne 3 ]; then
   echo "Usage: $0 {Azure ACR host} {ACR username} {ACR password}" >&2
   exit 1
 fi
+
+kubectl apply -f https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
+kubectl apply -f https://storage.googleapis.com/tekton-releases/dashboard/latest/tekton-dashboard-release.yaml
+
 echo "Looking for namespace..."
 if ! kubectl get namespaces -o json | jq -r ".items[].metadata.name" | grep build-example; then
 
